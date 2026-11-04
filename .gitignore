@@ -70,3 +70,5 @@ node_modules/
 docs/confusion_matrix.svg
 docs/confusion_matrix.csv
 docs/classifier_metrics.md
+
+.vercel
