@@ -121,7 +121,7 @@
           <div class="panel-head">
             <div>
               <h2>Upload Statements</h2>
-              <p class="muted">Text, scanned, mixed and password-protected PDFs — up to 25 MB / 100 pages each.</p>
+              <p class="muted">PDF files up to 25 MB · 100 pages each</p>
             </div>
             <span class="pill" id="upload-count">0 files queued</span>
           </div>
@@ -134,23 +134,13 @@
                   <path d="M12 42v6a6 6 0 0 0 6 6h28a6 6 0 0 0 6-6v-6" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
                 </svg>
               </div>
-              <strong>Drop PDF statements here</strong>
+              <strong>Drop PDF files here</strong>
               <span>or click to browse — multiple files supported</span>
-              <span class="drop-hint">🔐 Encrypted PDFs will ask for a password</span>
+              <span class="drop-hint">Encrypted PDFs will prompt for a password</span>
               <input id="file-input" type="file" accept="application/pdf,.pdf" multiple hidden />
             </div>
 
             <div class="upload-side">
-              <div class="mini-card">
-                <h3>How it works</h3>
-                <ol class="steps">
-                  <li><span>1</span> Detect text vs. scanned pages</li>
-                  <li><span>2</span> Reconstruct the transaction table</li>
-                  <li><span>3</span> Reconcile balances &amp; classify</li>
-                  <li><span>4</span> Review, correct &amp; export</li>
-                </ol>
-                <p class="mini-note">Files stay on this machine and are deleted after processing.</p>
-              </div>
               <div class="upload-progress hidden" id="upload-progress">
                 <div class="progress-head"><span id="progress-label">Processing…</span><span id="progress-pct">0%</span></div>
                 <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
@@ -167,7 +157,7 @@
           <div class="panel-head">
             <div>
               <h2>Statement History</h2>
-              <p class="muted">Stored locally in SQLite. Select statements to merge into one export.</p>
+              <p class="muted">Select statements to merge and export</p>
             </div>
             <div class="panel-actions">
               <button class="ghost-btn small" id="refresh-history" type="button">
@@ -252,7 +242,7 @@
           <div class="panel-head">
             <div>
               <h2>Transactions</h2>
-              <p class="muted" id="transactions-subtitle">Search, filter and correct categories inline.</p>
+              <p class="muted" id="transactions-subtitle">Search, filter and correct categories</p>
             </div>
             <div class="panel-actions">
               <span class="pill" id="txn-count-pill">0 rows</span>
@@ -335,7 +325,6 @@
           <div class="panel-head">
             <div>
               <h2>Dashboard</h2>
-              <p class="muted">Category mix, monthly cash flow, running balance and top merchants.</p>
             </div>
             <span class="pill" id="dashboard-pill">—</span>
           </div>
@@ -368,8 +357,8 @@
         </section>
 
         <footer class="app-footer">
-          <span>LedgerLens &mdash; Bank Statement Processing</span>
-          <span>Local processing &middot; files deleted after extraction &middot; no cloud calls</span>
+          <span>LedgerLens</span>
+          <span>Local &middot; Private &middot; No cloud</span>
         </footer>
       </section>
     </main>

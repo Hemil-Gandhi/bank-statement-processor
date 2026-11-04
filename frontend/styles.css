@@ -407,7 +407,7 @@ body.dark .badge.mixed { background: #0d2628; color: #2bbdce; }
 .pill { background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); font-weight: 500; font-size: 11px; }
 
 /* ─── Upload Section ────────────────────────────────────────── */
-.upload-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr); gap: 18px; }
+.upload-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 
 .dropzone {
   border: 2px dashed var(--line-strong);
@@ -476,9 +476,7 @@ body.dark .badge.mixed { background: #0d2628; color: #2bbdce; }
 .mini-note {
   margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line);
   font-size: 10.5px; line-height: 1.6; color: var(--muted);
-  display: flex; gap: 6px; align-items: flex-start;
 }
-.mini-note::before { content: '🔒'; font-size: 12px; flex: 0 0 auto; }
 
 .upload-progress {
   background: var(--surface);
@@ -794,7 +792,22 @@ body.dark .warnings-block.has-warnings { border-color: #6b5300; }
   color: var(--muted); text-align: center; padding: 48px 20px; font-size: 12.5px;
 }
 .empty-state strong { color: var(--ink-2); font-size: 14px; font-weight: 700; }
-.empty-state::before { content: '📄'; font-size: 32px; opacity: 0.6; }
+.empty-state::before {
+  content: '';
+  display: block;
+  width: 36px; height: 36px;
+  background: var(--surface-3);
+  border-radius: 10px;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 2v6h6M9 13h6M9 17h4'/%3E%3C/svg%3E");
+  mask-size: 60% 60%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 2v6h6M9 13h6M9 17h4'/%3E%3C/svg%3E");
+  -webkit-mask-size: 60% 60%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  opacity: 0.5;
+}
 
 .toast-stack {
   position: fixed; right: 20px; bottom: 20px; z-index: 80;
