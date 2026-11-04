@@ -1,67 +1,67 @@
 /* ============================================================
-   LedgerLens — Modern Premium UI
-   Inter font · Glassmorphism · Smooth animations · Dark mode
+   LedgerLens — Midnight Indigo UI
+   Plus Jakarta Sans · Indigo/Violet palette · Dark mode
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 /* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
   /* Palette */
-  --bg: #f0f4f8;
-  --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #e8eff7 100%);
-  --surface: #ffffff;
-  --surface-2: #f7fafc;
-  --surface-3: #edf2f7;
-  --surface-glass: rgba(255, 255, 255, 0.72);
-  --surface-glass-2: rgba(255, 255, 255, 0.5);
+  --bg: #F5F6FA;
+  --bg-gradient: linear-gradient(145deg, #F5F6FA 0%, #ECEEF8 100%);
+  --surface: #FFFFFF;
+  --surface-2: #F8F9FD;
+  --surface-3: #EDEEF8;
+  --surface-glass: rgba(255, 255, 255, 0.78);
+  --surface-glass-2: rgba(255, 255, 255, 0.55);
 
   /* Ink */
-  --ink: #0d1b2a;
-  --ink-2: #2d3f55;
-  --muted: #6b7a8f;
-  --muted-2: #9aaabb;
+  --ink: #0D0F1A;
+  --ink-2: #2A2E48;
+  --muted: #6B6F8E;
+  --muted-2: #A5A9C8;
 
   /* Lines */
-  --line: rgba(0, 0, 0, 0.08);
-  --line-strong: rgba(0, 0, 0, 0.14);
+  --line: rgba(79, 70, 229, 0.09);
+  --line-strong: rgba(79, 70, 229, 0.15);
 
-  /* Brand — teal-indigo gradient */
-  --brand: #0a7a8a;
-  --brand-2: #0d6678;
-  --brand-3: #095e6d;
-  --brand-soft: #e0f5f7;
-  --brand-glow: rgba(10, 122, 138, 0.18);
-  --brand-gradient: linear-gradient(135deg, #0a7a8a 0%, #3b4fd8 100%);
-  --brand-gradient-soft: linear-gradient(135deg, rgba(10,122,138,0.12) 0%, rgba(59,79,216,0.08) 100%);
+  /* Brand — Indigo → Violet */
+  --brand: #4F46E5;
+  --brand-2: #4338CA;
+  --brand-3: #3730A3;
+  --brand-soft: #EEF2FF;
+  --brand-glow: rgba(79, 70, 229, 0.20);
+  --brand-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  --brand-gradient-soft: linear-gradient(135deg, rgba(79,70,229,0.10) 0%, rgba(124,58,237,0.07) 100%);
 
   /* Semantic */
-  --accent: #c05c10;
-  --accent-soft: #fff3e8;
-  --danger: #c0202d;
-  --danger-soft: #fff0f1;
-  --info: #1a4fd6;
-  --info-soft: #eff4ff;
-  --ok: #0a8a5b;
-  --ok-soft: #eafaf3;
-  --warn: #c08a00;
-  --warn-soft: #fffbe0;
+  --accent: #D97706;
+  --accent-soft: #FFFBEB;
+  --danger: #DC2626;
+  --danger-soft: #FFF1F2;
+  --info: #2563EB;
+  --info-soft: #EFF6FF;
+  --ok: #059669;
+  --ok-soft: #ECFDF5;
+  --warn: #B45309;
+  --warn-soft: #FFFBEB;
 
   /* Shadows */
-  --shadow-xs: 0 1px 3px rgba(13, 27, 42, 0.06);
-  --shadow-sm: 0 2px 8px rgba(13, 27, 42, 0.08);
-  --shadow: 0 8px 24px rgba(13, 27, 42, 0.10);
-  --shadow-lg: 0 16px 48px rgba(13, 27, 42, 0.14);
-  --shadow-brand: 0 4px 20px rgba(10, 122, 138, 0.22);
+  --shadow-xs: 0 1px 3px rgba(13, 15, 26, 0.06);
+  --shadow-sm: 0 2px 10px rgba(13, 15, 26, 0.08);
+  --shadow: 0 8px 28px rgba(13, 15, 26, 0.10);
+  --shadow-lg: 0 20px 56px rgba(13, 15, 26, 0.14);
+  --shadow-brand: 0 4px 22px rgba(79, 70, 229, 0.26);
 
   /* Geometry */
   --radius: 14px;
-  --radius-sm: 9px;
-  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-xs: 7px;
 
   /* Typography */
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --mono: 'Cascadia Code', 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
 
   /* Animation */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,46 +70,46 @@
 
 /* ─── Dark Mode Tokens ─────────────────────────────────────── */
 body.dark {
-  --bg: #07111f;
-  --bg-gradient: linear-gradient(135deg, #07111f 0%, #0b1a2e 100%);
-  --surface: #0f1f35;
-  --surface-2: #142540;
-  --surface-3: #1a2f4f;
-  --surface-glass: rgba(15, 31, 53, 0.80);
-  --surface-glass-2: rgba(15, 31, 53, 0.55);
+  --bg: #06070F;
+  --bg-gradient: linear-gradient(145deg, #06070F 0%, #0C0D1E 100%);
+  --surface: #0F1024;
+  --surface-2: #141530;
+  --surface-3: #1B1C3A;
+  --surface-glass: rgba(15, 16, 36, 0.85);
+  --surface-glass-2: rgba(15, 16, 36, 0.60);
 
-  --ink: #e8edf5;
-  --ink-2: #b8c8de;
-  --muted: #7a90aa;
-  --muted-2: #546070;
+  --ink: #E8EAF6;
+  --ink-2: #B0B4D8;
+  --muted: #7174A0;
+  --muted-2: #484B6A;
 
-  --line: rgba(255, 255, 255, 0.07);
-  --line-strong: rgba(255, 255, 255, 0.12);
+  --line: rgba(129, 140, 248, 0.10);
+  --line-strong: rgba(129, 140, 248, 0.17);
 
-  --brand: #2bbdce;
-  --brand-2: #48d0de;
-  --brand-3: #1aacbd;
-  --brand-soft: #0d2a30;
-  --brand-glow: rgba(43, 189, 206, 0.20);
-  --brand-gradient: linear-gradient(135deg, #2bbdce 0%, #7c8ef0 100%);
-  --brand-gradient-soft: linear-gradient(135deg, rgba(43,189,206,0.14) 0%, rgba(124,142,240,0.10) 100%);
+  --brand: #818CF8;
+  --brand-2: #A5B4FC;
+  --brand-3: #6366F1;
+  --brand-soft: #1E1F45;
+  --brand-glow: rgba(129, 140, 248, 0.22);
+  --brand-gradient: linear-gradient(135deg, #818CF8 0%, #C084FC 100%);
+  --brand-gradient-soft: linear-gradient(135deg, rgba(129,140,248,0.14) 0%, rgba(192,132,252,0.10) 100%);
 
-  --accent: #f59e3a;
-  --accent-soft: #2a1e08;
-  --danger: #f46a76;
-  --danger-soft: #2f0e12;
-  --info: #7c9ef0;
-  --info-soft: #0e1a3a;
-  --ok: #4ddba0;
-  --ok-soft: #071e14;
-  --warn: #f5c842;
-  --warn-soft: #2a2200;
+  --accent: #FCD34D;
+  --accent-soft: #1C1500;
+  --danger: #F87171;
+  --danger-soft: #2D0A0A;
+  --info: #60A5FA;
+  --info-soft: #0A1628;
+  --ok: #34D399;
+  --ok-soft: #071A11;
+  --warn: #FCD34D;
+  --warn-soft: #1C1500;
 
-  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.36);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.44);
-  --shadow-brand: 0 4px 20px rgba(43, 189, 206, 0.24);
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.38);
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.44);
+  --shadow-lg: 0 20px 56px rgba(0, 0, 0, 0.52);
+  --shadow-brand: 0 4px 22px rgba(129, 140, 248, 0.26);
 }
 
 /* ─── Reset & Base ──────────────────────────────────────────── */
