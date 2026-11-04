@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ledgerlens
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: PYTHONPATH
+        value: /app/backend
+      - key: BSP_LOG_LEVEL
+        value: INFO

@@ -2,7 +2,7 @@
 (() => {
   "use strict";
 
-  const API = "/api";
+  const API = ((window.LEDGERLENS_CONFIG && window.LEDGERLENS_CONFIG.API_BASE_URL) || "") + "/api";
   const MAX_FILE_MB = 25;
   const COLORS = [
     "#0f5c6b", "#d97706", "#2563eb", "#b91c1c", "#64748b",
