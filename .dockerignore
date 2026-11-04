@@ -1,0 +1,16 @@
+.venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+backend/.pytest_cache/
+.pytest_cache/
+.git/
+.gitignore
+node_modules/
+backend/data/app.db
+backend/data/app.db-shm
+backend/data/app.db-wal
+backend/data/uploads/
+samples/exports/*.tmp
+*.log
+.DS_Store

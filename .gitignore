@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Virtual environments
+.venv/
+venv/
+
+# SQLite databases (local data, not committed)
+backend/data/app.db
+backend/data/uploads/
+
+# Trained model (large binary file, regeneratable)
+backend/data/models/*.joblib
+
+# Training data CSVs (sensitive / local)
+backend/data/training/*.csv
+
+# Logs
+*.log
+logs/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docker
+*.env
+.env
+.env.local
+.env.production
+
+# Node (if any tooling added later)
+node_modules/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Docs generated output (can be regenerated)
+docs/confusion_matrix.svg
+docs/confusion_matrix.csv
+docs/classifier_metrics.md

@@ -1,0 +1,573 @@
+# Editable classification rules. No code change is needed to add a keyword.
+# Rules resolve conflicts by priority, then specificity (longer match), then direction.
+version: 1
+
+rules:
+  - id: salary_credit
+    category: Salary/Income
+    priority: 130
+    direction: credit
+    keywords:
+      - SALARY
+      - SAL CR
+      - SALCR
+      - SALARY CREDIT
+      - MONTHLY SALARY
+      - PAYROLL
+      - WAGES
+      - STIPEND
+      - ARREARS
+      - SALARY PAYMENT
+    reason: salary credit
+
+  - id: business_income
+    category: Business Income
+    priority: 100
+    direction: credit
+    keywords:
+      - BUSINESS INCOME
+      - INVOICE PAYMENT
+      - CLIENT PAYMENT
+      - MERCHANT SETTLEMENT
+      - SETTLEMENT CREDIT
+      - PAYMENT RECEIVED
+      - COLLECTION
+      - RAZORPAY
+      - PAYU
+      - CASHFREE
+      - INSTAMOJO
+    reason: business receipt
+
+  - id: interest_earned
+    category: Interest Earned
+    priority: 130
+    direction: credit
+    keywords:
+      - INT.PD
+      - INT PD
+      - INTEREST CREDIT
+      - INT CR
+      - INTEREST EARNED
+      - SB INTEREST
+      - FD INTEREST
+      - INTEREST PAID
+      - INT ACCRUED
+      - INTEREST
+    reason: interest credit
+
+  - id: refund_reversal
+    category: Refund/Reversal
+    priority: 120
+    direction: any
+    keywords:
+      - REFUND
+      - REVERSAL
+      - REVERSED
+      - CHARGEBACK
+      - CASHBACK
+      - REV-
+      - FAILED TRANSACTION
+      - MONEY BACK
+      - RETURN
+    reason: refund or reversal
+
+  - id: atm_withdrawal
+    category: Cash Withdrawal (ATM)
+    priority: 130
+    direction: debit
+    keywords:
+      - ATM WDL
+      - ATM CASH
+      - CASH WITHDRAWAL
+      - CASH WDL
+      - NFS
+      - ATM-CASH
+      - ATM
+    reason: ATM cash withdrawal
+
+  - id: cash_deposit
+    category: Cash Deposit
+    priority: 130
+    direction: credit
+    keywords:
+      - CASH DEP
+      - CASH DEPOSIT
+      - BY CASH
+      - CDM
+      - CASH ACCEPTED
+      - CASH RECEIVED
+    reason: cash deposit
+
+  - id: transfer_in
+    category: Transfer In (Self/Others)
+    priority: 105
+    direction: credit
+    keywords:
+      - NEFT CR
+      - NEFT IN
+      - IMPS CR
+      - RTGS CR
+      - TRANSFER IN
+      - INWARD REMITTANCE
+      - SELF TRANSFER CR
+      - FROM SELF
+      - CREDIT TRANSFER
+    reason: inbound transfer
+
+  - id: transfer_out
+    category: Transfer Out
+    priority: 105
+    direction: debit
+    keywords:
+      - NEFT DR
+      - NEFT OUT
+      - IMPS DR
+      - RTGS DR
+      - TRANSFER OUT
+      - OUTWARD REMITTANCE
+      - SELF TRANSFER
+      - TO SELF
+      - DEBIT TRANSFER
+    reason: outbound transfer
+
+  - id: food_dining
+    category: Food & Dining
+    priority: 115
+    direction: any
+    keywords:
+      - ZOMATO
+      - SWIGGY
+      - DOMINOS
+      - MCDONALD
+      - KFC
+      - PIZZA HUT
+      - BURGER KING
+      - CAFE
+      - RESTAURANT
+      - BIRYANI
+      - FOOD
+      - EATERY
+      - BAKERY
+      - STARBUCKS
+      - DUNKIN
+      - BARBEQUE NATION
+      - HALDIRAM
+      - CHAAYOS
+      - THIRD WAVE
+      - SUBWAY
+    reason: food merchant
+
+  - id: groceries
+    category: Groceries
+    priority: 115
+    direction: any
+    keywords:
+      - BIGBASKET
+      - BLINKIT
+      - ZEPTO
+      - DMART
+      - D MART
+      - RELIANCE FRESH
+      - MORE SUPERMARKET
+      - GROCERY
+      - KIRANA
+      - SUPERMARKET
+      - INSTAMART
+      - JIO MART
+      - SPENCERS
+      - VISHAL MEGA MART
+      - NATURES BASKET
+      - LICIOUS
+    reason: grocery merchant
+
+  - id: shopping
+    category: Shopping/E-commerce
+    priority: 115
+    direction: any
+    keywords:
+      - AMAZON
+      - FLIPKART
+      - MYNTRA
+      - MEESHO
+      - AJIO
+      - SNAPDEAL
+      - TATACLIQ
+      - NYKAA
+      - LIFESTYLE
+      - WESTside
+      - SHOPPERS STOP
+      - RELIANCE TRENDS
+      - CROMA
+      - VIJAY SALES
+      - DECATHLON
+      - IKEA
+      - EBAY
+      - TATANEUE
+      - FIRSTCRY
+    reason: shopping merchant
+
+  - id: travel
+    category: Travel & Transport
+    priority: 115
+    direction: any
+    keywords:
+      - UBER
+      - OLA
+      - RAPIDO
+      - IRCTC
+      - MAKEMYTRIP
+      - REDBUS
+      - INDIGO
+      - SPICEJET
+      - AIR INDIA
+      - VISTARA
+      - AKASA
+      - GOIBIBO
+      - YATRA
+      - CLEARTRIP
+      - METRO RAIL
+      - TRAIN
+      - FLIGHT
+      - HOTEL
+      - BOOKING COM
+      - OYO
+      - PORTER
+      - BLUSMART
+      - ZOOMCAR
+      - REVVRIDE
+    reason: travel merchant
+
+  - id: fuel
+    category: Fuel
+    priority: 120
+    direction: any
+    keywords:
+      - HPCL
+      - BPCL
+      - IOCL
+      - INDIAN OIL
+      - PETROL
+      - FUEL
+      - DIESEL
+      - SHELL
+      - NAYARA
+      - RELIANCE PETRO
+      - HP PETROL
+      - AUTO FUEL
+      - CNG
+    reason: fuel merchant
+
+  - id: utilities
+    category: Utilities (Electricity/Water/Gas)
+    priority: 115
+    direction: any
+    keywords:
+      - BESCOM
+      - TORRENT POWER
+      - ELECTRICITY
+      - WATER BILL
+      - GAS BILL
+      - ADANI ELECTRICITY
+      - TATA POWER
+      - MSEB
+      - KSEB
+      - TNEB
+      - BSES
+      - INDANE
+      - HP GAS
+      - BHARAT GAS
+      - GAIL
+      - UTILITY
+      - POWER BILL
+      - MUNICIPAL
+    reason: utility bill
+
+  - id: mobile_internet
+    category: Mobile/DTH/Internet
+    priority: 115
+    direction: any
+    keywords:
+      - AIRTEL
+      - JIO
+      - VODAFONE
+      - BSNL
+      - DTH
+      - TATA PLAY
+      - DISH TV
+      - ACT FIBERNET
+      - HATHWAY
+      - BROADBAND
+      - RECHARGE
+      - POSTPAID
+      - MOBILE BILL
+      - INTERNET
+      - IDEA
+    reason: mobile or internet bill
+
+  - id: rent
+    category: Rent
+    priority: 120
+    direction: debit
+    keywords:
+      - HOUSE RENT
+      - RENT PAYMENT
+      - RENTAL
+      - LANDLORD
+      - NOBROKER
+      - RENT
+      - LEASE
+    reason: rent payment
+
+  - id: emi_loan
+    category: EMI/Loan Repayment
+    priority: 110
+    direction: debit
+    keywords:
+      - LOAN EMI
+      - HOME LOAN
+      - CAR LOAN
+      - PERSONAL LOAN
+      - LIC HOUSING
+      - PNB HOUSING
+      - BAJAJ FINANCE
+      - HDFC LTD
+      - EMI
+      - LOAN
+      - NACH
+      - REPAYMENT
+    reason: loan repayment
+
+  - id: credit_card
+    category: Credit Card Payment
+    priority: 115
+    direction: debit
+    keywords:
+      - CREDIT CARD
+      - CC PAYMENT
+      - CARD PAYMENT
+      - BILLDESK
+      - CRED
+      - AMEX
+      - HDFC CARD
+      - ICICI CARD
+      - SBI CARD
+      - AXIS CARD
+      - KOTAK CARD
+      - PAYMENT TO CARD
+    reason: credit card bill
+
+  - id: insurance
+    category: Insurance
+    priority: 115
+    direction: any
+    keywords:
+      - INSURANCE
+      - HDFC LIFE
+      - ICICI PRU
+      - SBI LIFE
+      - MAX LIFE
+      - BAJAJ ALLIANZ
+      - TATA AIG
+      - STAR HEALTH
+      - NIVABUPA
+      - POLICY PREMIUM
+      - LIC
+      - PREMIUM
+    reason: insurance premium
+
+  - id: investments
+    category: Investments (MF/SIP/Stocks)
+    priority: 125
+    direction: any
+    keywords:
+      - MUTUAL FUND
+      - MF PURCHASE
+      - SIP
+      - ZERODHA
+      - GROWW
+      - UPSTOX
+      - ANGEL ONE
+      - NPS
+      - PPF
+      - ELSS
+      - STOCKS
+      - DEMAT
+      - KITE
+      - INDMONEY
+      - SMALLCASE
+      - BSE
+      - NSE
+    reason: investment purchase
+
+  - id: taxes
+    category: Taxes (GST/Income Tax)
+    priority: 115
+    direction: any
+    keywords:
+      - GST PAYMENT
+      - GSTN
+      - INCOME TAX
+      - ADVANCE TAX
+      - TAX PAYMENT
+      - PROPERTY TAX
+      - SALES TAX
+      - TDS
+      - ITR
+      - CHALLAN
+      - CBDT
+    reason: tax payment
+
+  - id: bank_charges
+    category: Bank Charges & Fees
+    priority: 140
+    direction: any
+    keywords:
+      - ATM CHARGE
+      - SMS ALERT
+      - ANNUAL FEE
+      - MIN BAL
+      - GST ON
+      - SERVICE CHARGE
+      - NEFT CHARGE
+      - IMPS CHARGE
+      - STATEMENT CHARGE
+      - PROCESSING FEE
+      - CONVENIENCE FEE
+      - CHARGES
+      - AMC
+      - LOCKER
+      - PENALTY
+      - LATE FEE
+    reason: bank charge or fee
+
+  - id: healthcare
+    category: Healthcare
+    priority: 115
+    direction: any
+    keywords:
+      - APOLLO
+      - FORTIS
+      - MAX HOSPITAL
+      - MEDPLUS
+      - PHARMEASY
+      - 1MG
+      - NETMEDS
+      - HOSPITAL
+      - CLINIC
+      - DOCTOR
+      - PHARMACY
+      - MEDICAL
+      - DIAGNOSTIC
+      - DENTAL
+      - HEALTH
+    reason: healthcare merchant
+
+  - id: education
+    category: Education
+    priority: 115
+    direction: any
+    keywords:
+      - SCHOOL
+      - COLLEGE
+      - UNIVERSITY
+      - TUITION
+      - COURSERA
+      - UDEMY
+      - BYJU
+      - UNACADEMY
+      - VEDANTU
+      - EXAM
+      - EDUCATION
+      - HOSTEL
+      - FEES
+    reason: education payment
+
+  - id: entertainment
+    category: Entertainment/Subscriptions
+    priority: 115
+    direction: any
+    keywords:
+      - NETFLIX
+      - SPOTIFY
+      - HOTSTAR
+      - PRIME VIDEO
+      - DISNEY
+      - SONY LIV
+      - ZEE5
+      - YOUTUBE PREMIUM
+      - BOOKMYSHOW
+      - PVR
+      - INOX
+      - CINEMA
+      - GAMING
+      - STEAM
+      - PLAYSTATION
+      - JIO CINEMA
+    reason: entertainment or subscription
+
+  - id: donations
+    category: Donations
+    priority: 115
+    direction: any
+    keywords:
+      - DONATION
+      - DONATE
+      - NGO
+      - CHARITY
+      - TEMPLE
+      - TRUST
+      - RELIEF FUND
+      - PM CARES
+      - CHURCH
+      - MOSQUE
+      - GURUDWARA
+    reason: donation
+
+  - id: cheque
+    category: Cheque (Deposit/Issue)
+    priority: 95
+    direction: any
+    keywords:
+      - ISSUED CHEQUE
+      - CHQ PAID
+      - CHQ DEP
+      - CHEQUE
+      - CLEARING
+      - CLG
+      - CHQ
+    reason: cheque transaction
+
+  - id: upi_payment
+    category: UPI Payment
+    priority: 60
+    direction: debit
+    keywords:
+      - UPI PAYMENT
+      - UPI
+      - BHIM
+      - GPAY
+      - PHONEPE
+      - PAYTM UPI
+    regex:
+      - '@(?:OK|YBL|AXL|PAYTM|IBL|SBI|HDFC|ICICI)[A-Z]*'
+    reason: UPI payment
+
+  - id: transfer_generic
+    category: Transfer Out
+    priority: 50
+    direction: debit
+    keywords:
+      - TRANSFER
+      - NEFT
+      - IMPS
+      - RTGS
+      - REMITTANCE
+    reason: bank transfer
+
+  - id: cash_generic
+    category: Cash Deposit
+    priority: 55
+    direction: credit
+    keywords:
+      - CASH
+    reason: cash deposit

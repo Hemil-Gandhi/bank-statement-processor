@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bank-statement-processor:1.0.0
+    container_name: bank-statement-processor
+    ports:
+      - "8000:8000"
+    environment:
+      BSP_LOG_LEVEL: INFO
+      BSP_OCR_LANG: eng
+    volumes:
+      # SQLite database + upload scratch space. The classifier model is baked
+      # into the image under /app/model so a fresh volume still works.
+      - bsp_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  bsp_data:
